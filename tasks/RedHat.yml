@@ -1,0 +1,9 @@
+---
+- name: get rpm
+  sudo: yes
+  get_url: url="http://download.opensuse.org/repositories/utilities/CentOS_6/utilities.repo" dest="/etc/yum.repos.d"
+
+- name: install rcm
+  yum:
+    name: "rcm"
+    state: present
