@@ -1,0 +1,11 @@
+---
+- name: install rcm
+  apt:
+    name: rcm
+    state: present
+
+- name: download dotfiles
+  git: repo=https://github.com/endorno/dotfiles.git dest={{ ansible_env.HOME }}/.dotfiles accept_hostkey=yes
+
+- name: setup dotfiles
+  command: rcup
